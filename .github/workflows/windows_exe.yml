@@ -20,8 +20,3 @@ jobs:
         with:
           name: instaloader-windows-standalone
           path: dist
-      - name: Upload build artifact for debugging
-        uses: actions/upload-artifact@v1
-        with:
-          name: build
-          path: build
