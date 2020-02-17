@@ -1,4 +1,5 @@
 import hashlib
+import os
 import re
 import shutil
 import subprocess
@@ -80,3 +81,6 @@ with open('dist/instaloader.exe', 'rb') as f:
 
 with open('dist/instaloader.exe.md5', 'w+') as f:
     f.write('{} *instaloader.exe\n'.format(hash_md5.hexdigest()))
+
+# Create ZIP file
+shutil.make_archive('instaloader-{}-windows-standalone'.format(os.getenv('VERSION_TAG')), 'zip', 'dist')
